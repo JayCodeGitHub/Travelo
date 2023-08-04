@@ -19,6 +19,3 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
     command: --default-authentication-plugin=mysql_native_password
-volumes:
-  pgdata:
-    driver: local
