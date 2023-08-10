@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NavBar() {
   return (
-    <nav className="flex items-center justify-between w-full h-20 font-bold px-52">
+    <nav className="fixed z-10 flex items-center justify-between w-full h-20 font-bold text-white px-52 backdrop-blur-[3px] bg-white/10">
       <h1 className="text-xl">
         <Link href="/">Travelo</Link>
       </h1>
