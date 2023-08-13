@@ -1,8 +1,37 @@
+"use client";
+
 import Link from "next/link";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useState, useLayoutEffect } from "react";
 
 export default function NavBar() {
+  const { scrollYProgress } = useScroll();
+  const [top, setTop] = useState(false);
+
+  const handleScrollChange = (value: any) => {
+    if (value === 0) {
+      setTop(true);
+    } else {
+      setTop(false);
+    }
+  };
+
+  useLayoutEffect(() => {
+    if (scrollYProgress.get() === 0) {
+      setTop(true);
+    } else {
+      setTop(false);
+    }
+  }, []);
+
+  scrollYProgress.onChange(handleScrollChange);
+
   return (
-    <nav className="fixed z-10 flex items-center justify-between w-full h-20 font-bold text-white px-52 backdrop-blur-[3px] bg-white/10">
+    <motion.nav
+      className={`fixed z-10 flex items-center justify-between w-full h-20 font-bold text-white px-52 backdrop-blur-[3px] ${
+        top ? "bg-red-500" : "bg-blue-500"
+      }`}
+    >
       <h1 className="text-xl">
         <Link href="/">Travelo</Link>
       </h1>
@@ -17,6 +46,6 @@ export default function NavBar() {
           <Link href="/contact">Contact</Link>
         </li>
       </ul>
-    </nav>
+    </motion.nav>
   );
 }
