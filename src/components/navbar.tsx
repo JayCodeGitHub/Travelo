@@ -28,8 +28,8 @@ export default function NavBar() {
 
   return (
     <motion.nav
-      className={`fixed z-10 flex items-center justify-between w-full h-20 font-bold text-white px-52 backdrop-blur-[3px] ${
-        top ? "bg-red-500" : "bg-blue-500"
+      className={`fixed z-10 flex items-center justify-between w-full font-bold text-white px-52 backdrop-blur-[3px] transition-all ${
+        top ? "bg-transparent h-20" : "bg-white/10 h-24"
       }`}
     >
       <h1 className="text-xl">
