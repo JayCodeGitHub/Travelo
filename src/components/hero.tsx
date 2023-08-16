@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Button from "./button";
+import RoudMap from "./roudMap";
 
 export default function Hero() {
   return (
@@ -23,7 +25,7 @@ export default function Hero() {
           </p>
           <button>See Offer</button>
         </header>
-        <div className="bg-red-500  w-96">Round Map</div>
+        <RoudMap />
       </div>
     </div>
   );
