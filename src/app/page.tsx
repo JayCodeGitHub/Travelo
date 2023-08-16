@@ -1,9 +1,15 @@
-import List from "@/components/list";
-import NavBar from "@/components/navbar";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="pt-20 text-white bg-gray-900">
+    <main className="text-white bg-gray-900">
+      <Image
+        className="w-full"
+        src="/images/hero.jpg"
+        alt="Hero Image"
+        width={1522}
+        height={1005}
+      />
       <h1>Travelo</h1>
       <p className="m-20">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni harum
