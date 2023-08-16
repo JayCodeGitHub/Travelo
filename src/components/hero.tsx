@@ -23,7 +23,7 @@ export default function Hero() {
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </p>
-          <button>See Offer</button>
+          <Button>See Offer</Button>
         </header>
         <RoudMap />
       </div>
