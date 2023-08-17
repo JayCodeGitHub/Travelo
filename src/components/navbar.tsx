@@ -1,8 +1,8 @@
 "use client";
-
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useLayoutEffect } from "react";
+import Button from "./button";
 
 export default function NavBar() {
   const { scrollYProgress } = useScroll();
@@ -35,7 +35,7 @@ export default function NavBar() {
       <h1 className="text-xl">
         <Link href="/">Travelo</Link>
       </h1>
-      <ul className="flex gap-10 p-0 m-0 text-lg">
+      <ul className="flex items-center justify-center gap-10 p-0 m-0 text-lg">
         <li>
           <Link href="/offer">Offer</Link>
         </li>
@@ -44,6 +44,11 @@ export default function NavBar() {
         </li>
         <li>
           <Link href="/contact">Contact</Link>
+        </li>
+        <li>
+          <Link href="/">
+            <Button>Log In</Button>
+          </Link>
         </li>
       </ul>
     </motion.nav>
