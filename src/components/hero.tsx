@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Button from "./button";
-import RoudMap from "./roudMap";
+import RoudMap from "./roadMap";
 
 export default function Hero() {
   return (
