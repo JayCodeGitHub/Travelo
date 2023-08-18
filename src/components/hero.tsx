@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <div className="relative h-screen">
       <Image
-        className="w-full"
+        className="object-cover w-full h-full opacity-60"
         src="/images/hero.jpg"
         alt="Hero Image"
         width={1522}
