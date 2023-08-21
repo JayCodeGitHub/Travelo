@@ -4,6 +4,7 @@ import { motion, useScroll } from "framer-motion";
 import { useState, useLayoutEffect } from "react";
 import Button from "./button";
 import Image from "next/image";
+import { NavBarItems, MobileNavBarItems } from "@/assets/navbarItems";
 
 export default function NavBar() {
   const { scrollYProgress } = useScroll();
@@ -38,15 +39,11 @@ export default function NavBar() {
           <Link href="/">Travelo</Link>
         </h1>
         <ul className="flex items-center justify-center gap-10 p-0 m-0 text-lg">
-          <li>
-            <Link href="/offer">Offer</Link>
-          </li>
-          <li>
-            <Link href="/favorites">Favorites</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact</Link>
-          </li>
+          {NavBarItems.map(({ href, title }) => (
+            <li key={title}>
+              <Link href={href}>{title}</Link>
+            </li>
+          ))}
           <li>
             <Link href="/">
               <Button>Log In</Button>
@@ -56,81 +53,23 @@ export default function NavBar() {
       </motion.nav>
       <motion.div className="fixed bottom-0 w-full h-24 bg-white/5 backdrop-blur-[3px] md:hidden text-white">
         <ul className="flex justify-around">
-          <li>
-            <Link
-              href="/"
-              className="flex flex-col items-center justify-center h-full"
-            >
-              <Image
-                className="w-auto p-4 h-3/4"
-                src="/icons/home.svg"
-                alt="Home Icon"
-                width={32}
-                height={32}
-              />
-              Travelo
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/offer"
-              className="flex flex-col items-center justify-center h-full"
-            >
-              <Image
-                className="w-auto p-4 h-3/4"
-                src="/icons/list.svg"
-                alt="Home Icon"
-                width={32}
-                height={32}
-              />
-              Offer
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/favorites"
-              className="flex flex-col items-center justify-center h-full"
-            >
-              <Image
-                className="w-auto p-4 h-3/4"
-                src="/icons/heart.svg"
-                alt="Home Icon"
-                width={32}
-                height={32}
-              />
-              Favorites
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/contact"
-              className="flex flex-col items-center justify-center h-full"
-            >
-              <Image
-                className="w-auto p-4 h-3/4"
-                src="/icons/edit.svg"
-                alt="Home Icon"
-                width={32}
-                height={32}
-              />
-              Contact
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/"
-              className="flex flex-col items-center justify-center h-full"
-            >
-              <Image
-                className="w-auto p-4 h-3/4"
-                src="/icons/user.svg"
-                alt="Home Icon"
-                width={32}
-                height={32}
-              />
-              Log In
-            </Link>
-          </li>
+          {MobileNavBarItems.map(({ href, icon, title }) => (
+            <li key="title">
+              <Link
+                href={href}
+                className="flex flex-col items-center justify-center h-full"
+              >
+                <Image
+                  className="w-auto p-4 h-3/4"
+                  src={icon}
+                  alt="Home Icon"
+                  width={32}
+                  height={32}
+                />
+                {title}
+              </Link>
+            </li>
+          ))}
         </ul>
       </motion.div>
     </>
