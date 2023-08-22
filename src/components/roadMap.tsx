@@ -4,8 +4,8 @@ import { RoadMapItems } from "@/assets/roadMapItems";
 
 export default function RoadMap() {
   return (
-    <div className="rounded-md w-96 backdrop-blur-[3px] bg-white/10 flex justify-between py-12 px-4 flex-col">
-      <h2 className="ml-6 text-xl">RoadMap</h2>
+    <div className="rounded-md w-96 backdrop-blur-[3px] bg-white/10 justify-between py-12 px-4 flex-col hidden lg:flex">
+      <h2 className="ml-6 text-xl">Road Map</h2>
       {RoadMapItems.map(({ icon, title, description }) => (
         <>
           <div className="flex w-full h-24 gap-4 px-2 py-2 rounded-md bg-black/60">

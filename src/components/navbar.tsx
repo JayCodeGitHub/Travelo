@@ -51,7 +51,7 @@ export default function NavBar() {
           </li>
         </ul>
       </motion.nav>
-      <motion.div className="fixed bottom-0 w-full h-24 bg-white/5 backdrop-blur-[3px] md:hidden text-white">
+      <motion.div className="fixed bottom-0 w-full h-24 bg-white/5 backdrop-blur-[3px] md:hidden z-10 text-white">
         <ul className="flex justify-around">
           {MobileNavBarItems.map(({ href, icon, title }) => (
             <li key="title">
